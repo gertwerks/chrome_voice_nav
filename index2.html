@@ -21,7 +21,7 @@
                 player = new YT.Player('player', {
                 height: '640',
                 width: '940',
-                videoId: 'HBsdV--kLoQ',
+                videoId: 'NFTaiWInZ44',
                 events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
@@ -65,10 +65,10 @@
                         //$("#repeat").click();
                         $("#pause").click();
                         break;
-                    case "next":
+                    case "back":
                         //$("#start").click();
                         
-                        window.location =  'index2.html';
+                        window.location =  'index.html';
                         break;
                     default:
                         flag=0;
@@ -100,7 +100,7 @@
     <div class="row">
         <div class="twelve columns">
 
-       <h2> Click the microphone and use the voice commands Play, Stop, Pause, and Next to control the videos.</h2>
+       <h2> Click the microphone and use the voice commands Play, Stop, Pause, and Back to control the videos.</h2>
           
             <dl class="tabs" style="display:none;">
                 <dd><a id="play" title="" class="white" href="javascript:void(0)" onclick="player.playVideo()">Play</a></dd>
