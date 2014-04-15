@@ -1,0 +1,59 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>stripped voice nav</title>
+	<script>
+	function processspeech()
+                {
+                var speechtext=$("#speech").val();
+                var flag=1;
+                switch (speechtext)
+                {
+                    case "play":             
+                        
+                        $("#play").click();
+                        break;
+                    case "stop":
+                        $("#stop").click();
+                        break;
+                    case "pause":
+                        //$("#repeat").click();
+                        $("#pause").click();
+                        break;
+                    case "next":
+                        //$("#start").click();
+                        
+                        window.location =  'index2.html';
+                        break;
+                    default:
+                        flag=0;
+                        for (i=1;i<=3;i++) $("#speechinput").animate({"border-color":"#900"},500).animate({"border-color":"#fff"},500);
+                }
+                if (flag==1) for (i=1;i<=3;i++) $("#speechinput").animate({"border-color":"#060"},500).animate({"border-color":"#fff"},500);
+                else
+                {
+                   // var notification="\"<span style=\"color:#F00; text-transform:uppercase;\">"+ speechtext + "<\/span>\" is an invalid voice command.<br />*Valid voice /commands are: CHAT, VIDEO, PICTURE, LIVE, CONTACT";
+                    //notify(notification);
+                }
+                }
+
+                </script>
+</head>
+<body>
+
+  	<div id="speechinput" style="margin-top:20px;">
+                <input id="speech" type="text" speech="speech" x-webkit-speech="x-webkit-speech" onspeechchange="processspeech();" onwebkitspeechchange="processspeech();">
+            </div>
+            <dl class="tabs" style="display:none;">
+                <dd><a id="play" title="" class="white" href="javascript:void(0)" onclick="player.playVideo()">Play</a></dd>
+
+                <dd><a id="stop" title="" class="white" href="javascript:void(0)" onclick="player.stopVideo()">Stop</a></dd>
+
+                <dd><a id="pause" title="" class="white" href="javascript:void(0)" onclick="player.pauseVideo()">Pause</a></dd>
+
+                <dd><a id="next" title="" class="white">Next</a></dd>
+            </dl>
+            <iframe width="853" height="480" src="http://www.youtube.com/embed/-BjlKgymS9k" frameborder="0" allowfullscreen></iframe>
+	
+</body>
+</html>
